@@ -1,6 +1,7 @@
 import { DM_Serif_Display, Manrope } from "next/font/google";
 
-import "/global/styles/globals.css";
+import { Header } from "@/components/header/header";
+import "@/global/styles/globals.css";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -20,7 +21,10 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
       lang="pt-BR"
       className={`${manrope.variable} ${dmSerifDisplay.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+      </body>
     </html>
   );
 }
