@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="550" viewBox="0 0 800 550" fill="none">
+  <rect width="800" height="550" fill="#EFEAE3"/>
+  <rect x="48" y="48" width="704" height="80" rx="16" fill="#DCD5CC"/>
+  <rect x="48" y="160" width="320" height="24" rx="12" fill="#28545A" fill-opacity="0.35"/>
+  <rect x="48" y="204" width="420" height="14" rx="7" fill="#DCD5CC"/>
+  <rect x="48" y="232" width="280" height="14" rx="7" fill="#DCD5CC"/>
+  <rect x="48" y="290" width="220" height="180" rx="20" fill="#28545A"/>
+  <rect x="292" y="290" width="220" height="180" rx="20" fill="#DCD5CC"/>
+  <rect x="536" y="290" width="216" height="180" rx="20" fill="#F7F3ED"/>
+  <text x="48" y="520" fill="#5C5C5C" font-family="Arial, sans-serif" font-size="18">NFB  Natural Beauty</text>
+</svg>

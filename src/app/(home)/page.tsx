@@ -1,4 +1,11 @@
 import { Metadata } from "next";
+import { About } from "@/components/about/about";
+import { Contact } from "@/components/contact/contact";
+import { Faq } from "@/components/faq/faq";
+import { Hero } from "@/components/hero/hero";
+import { Projects } from "@/components/projects/projects";
+import { Services } from "@/components/services/services";
+import { Stats } from "@/components/stats/stats";
 
 export const metadata: Metadata = {
   title: "Nathálya | Front-end & UI Designer",
@@ -9,8 +16,6 @@ export const metadata: Metadata = {
     "Front-end",
     "UI Designer",
     "Desenvolvedora",
-    "Developer",
-    "Designer",
     "Developer",
     "Designer",
   ],
@@ -30,5 +35,15 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <div></div>;
+  return (
+    <>
+      <Hero />
+      <Services />
+      <Projects />
+      <About />
+      <Contact />
+      <Faq />
+      <Stats />
+    </>
+  );
 }
