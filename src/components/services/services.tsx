@@ -1,4 +1,4 @@
-import { Container } from "@/components/shared/Container";
+import { Container } from "@/components/Container";
 import { SERVICES } from "@/data/services";
 import { ServiceCard } from "./ServiceCard";
 import { cn } from "cn";

@@ -9,7 +9,7 @@ export function FaqList({ items }: { items: FaqItemType[] }) {
   const [openId, setOpenId] = useState<string | null>(items[0]?.id ?? null);
 
   return (
-    <ul className="divide-y divide-beige border-y border-beige">
+    <ul className="flex flex-col">
       {items.map((item) => {
         const isOpen = openId === item.id;
 
@@ -17,7 +17,9 @@ export function FaqList({ items }: { items: FaqItemType[] }) {
           <li key={item.id}>
             <button
               type="button"
-              className="flex w-full cursor-pointer items-center justify-between gap-4 py-5 text-left"
+              className={cn(
+                "flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-4 text-left bg-white rounded-xl",
+              )}
               aria-expanded={isOpen}
               onClick={() => setOpenId(isOpen ? null : item.id)}
             >
@@ -34,7 +36,7 @@ export function FaqList({ items }: { items: FaqItemType[] }) {
             </button>
             <div
               className={cn(
-                "grid transition-[grid-template-rows] duration-300",
+                "grid transition-[grid-template-rows] duration-300 px-4 py-2",
                 isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
               )}
             >

@@ -1,6 +1,9 @@
-import { ButtonLink } from "@/components/shared/ButtonLink";
-import { Container } from "@/components/shared/Container";
-import { ContactVisual } from "./ContactVisual";
+import NextImage from "next/image";
+
+import { Button } from "@/components/layout/Button";
+import { Container } from "@/components/Container";
+import { Title } from "../layout/Title";
+import { SectionLabel } from "../layout/SectionLabel";
 
 export function Contact() {
   return (
@@ -11,27 +14,28 @@ export function Contact() {
     >
       <Container className="overflow-hidden rounded-3xl border border-beige lg:grid lg:max-w-7xl lg:grid-cols-2 lg:rounded-none lg:border-0 lg:px-0">
         <div className="flex flex-col justify-center px-6 py-10 sm:px-10 lg:px-12 lg:py-24">
-          <span className="text-xs font-semibold tracking-[0.18em] text-petrol-blue uppercase">
-            Contato
-          </span>
-          <h2
-            id="contato-heading"
-            className="mt-4 font-dm-serif-display text-3xl leading-tight text-black sm:text-4xl"
-          >
-            Vamos começar?
-          </h2>
-          <p className="mt-4 max-w-md text-base leading-relaxed text-gray">
+          <SectionLabel>Contato</SectionLabel>
+          
+          <Title id="contato-heading">Vamos começar?</Title>
+
+          <p className="mt-5 text-base leading-relaxed text-gray">
             Conte-me sobre seu projeto e vamos transformar sua ideia em uma
             experiência digital incrível.
           </p>
           <div className="mt-8">
-            <ButtonLink href="mailto:contato@nathalyadev.com.br" showArrow>
+            <Button href="mailto:ns.contato21@gmail.com"variant="outline" showArrow>
               Solicitar orçamento
-            </ButtonLink>
+            </Button>
           </div>
         </div>
 
-        <ContactVisual />
+        <NextImage
+          src="/images/contact/contact.png"
+          alt="Contact"
+          width={550}
+          height={550}
+          className="h-full"
+        />
       </Container>
     </section>
   );

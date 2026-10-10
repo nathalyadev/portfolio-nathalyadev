@@ -2,9 +2,9 @@ import Link from "next/link";
 import { HiArrowLongRight } from "react-icons/hi2";
 import { cn } from "@/lib/utils";
 
-type ButtonLinkVariant = "primary" | "outline" | "ghost";
+type ButtonVariant = "primary" | "outline" | "ghost";
 
-export function ButtonLink({
+export function Button({
   href,
   children,
   className,
@@ -15,7 +15,7 @@ export function ButtonLink({
   href: string;
   children: React.ReactNode;
   className?: string;
-  variant?: ButtonLinkVariant;
+  variant?: ButtonVariant;
   showArrow?: boolean;
   onClick?: () => void;
 }) {

@@ -1,4 +1,4 @@
-import { ButtonLink } from "@/components/shared/ButtonLink";
+import { Button } from "@/components/layout/Button";
 
 export function HeroContent() {
   return (
@@ -23,12 +23,12 @@ export function HeroContent() {
       </p>
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <ButtonLink href="/#projetos" showArrow>
+        <Button href="/#projetos" showArrow>
           Ver projetos
-        </ButtonLink>
-        <ButtonLink href="/#contato" variant="outline">
+        </Button>
+        <Button href="/#contato" variant="outline">
           Solicitar orçamento
-        </ButtonLink>
+        </Button>
       </div>
     </div>
   );

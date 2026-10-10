@@ -12,7 +12,7 @@ export function ProjectCard({
 }) {
   const content = (
     <>
-      <div className="relative aspect-16/11 overflow-hidden rounded-xl bg-secondary">
+      <div className="relative aspect-16/11 w-full shrink-0 overflow-hidden rounded-xl bg-secondary">
         <Image
           src={project.image}
           alt={`Preview do projeto ${project.title}`}
@@ -22,15 +22,20 @@ export function ProjectCard({
         />
       </div>
 
-      <div className="mt-5 flex flex-col gap-2">
+      <div className="mt-4 flex flex-1 flex-col">
         <span className="text-xs font-semibold tracking-[0.14em] text-petrol-blue uppercase">
           {project.category}
         </span>
-        <h3 className="font-dm-serif-display text-2xl text-black">
+
+        <h3 className="mt-2 min-h-14 font-dm-serif-display text-2xl leading-tight text-black">
           {project.title}
         </h3>
-        <p className="text-sm leading-relaxed text-gray">{project.description}</p>
-        <ul className="mt-3 flex flex-wrap gap-2">
+
+        <p className="mt-2 line-clamp-3 min-h-18 text-sm leading-relaxed text-gray">
+          {project.description}
+        </p>
+
+        <ul className="mt-auto flex flex-wrap gap-2 pt-2">
           {project.tags.map((tag) => (
             <li
               key={tag}
@@ -44,11 +49,13 @@ export function ProjectCard({
     </>
   );
 
+  const cardClassName = cn("group flex h-full flex-col first:border-l border-beige pl-4", className);
+
   if (project.href) {
     return (
       <Link
         href={project.href}
-        className={cn("group block", className)}
+        className={cardClassName}
         aria-label={`Ver projeto ${project.title}`}
       >
         {content}
@@ -56,5 +63,5 @@ export function ProjectCard({
     );
   }
 
-  return <article className={cn("group first:border-l border-beige first:pl-4", className)}>{content}</article>;
+  return <article className={cardClassName}>{content}</article>;
 }

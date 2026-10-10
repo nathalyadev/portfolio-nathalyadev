@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Container } from "@/components/shared/Container";
+import { Container } from "@/components/Container";
 import { FooterNav } from "./FooterNav";
 import { SocialLinks } from "./SocialLinks";
 
 export function Footer() {
   return (
-    <footer className="bg-[#18383c] py-10 sm:py-12">
+    <footer className="bg-black py-8 sm:py-8">
       <Container className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
         <Link
           href="/"

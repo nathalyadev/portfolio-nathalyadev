@@ -9,22 +9,22 @@ import { cn } from "@/lib/utils";
 export const SOCIAL_LINKS = [
   {
     label: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/nathalyadev",
     icon: FaInstagram,
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/nathalya-souza-dev",
     icon: FaLinkedinIn,
   },
   {
     label: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/nathalyadev",
     icon: FaGithub,
   },
   {
     label: "Behance",
-    href: "https://behance.net",
+    href: "https://www.behance.net/nathalyadev",
     icon: FaBehance,
   },
 ] as const;

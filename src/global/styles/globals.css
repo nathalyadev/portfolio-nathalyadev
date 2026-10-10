@@ -8,6 +8,7 @@
   --cream: #f7f3ed;
   --black: #181818;
   --gray: #5c5c5c;
+  --light-gray: #EEEEEE;
   --beige: #dcd5cc;
   --petrol-blue: #28545a;
   --background: var(--cream);
@@ -50,6 +51,7 @@
   --color-cream: var(--cream);
   --color-black: var(--black);
   --color-gray: var(--gray);
+  --color-light-gray: var(--light-gray);
   --color-beige: var(--beige);
   --color-petrol-blue: var(--petrol-blue);
   --font-manrope: var(--font-manrope);
@@ -102,6 +104,7 @@ body {
 .dark {
   --background: var(--black);
   --foreground: var(--cream);
+  --light-gray: #eeeeee;
   --card: var(--black);
   --card-foreground: var(--cream);
   --popover: #1f1f1f;

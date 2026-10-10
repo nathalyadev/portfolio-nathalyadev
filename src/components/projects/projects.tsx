@@ -1,5 +1,5 @@
-import { ButtonLink } from "@/components/shared/ButtonLink";
-import { Container } from "@/components/shared/Container";
+import { Button } from "@/components/layout/Button";
+import { Container } from "@/components/Container";
 import { PROJECTS } from "@/data/projects";
 import { ProjectCard } from "./ProjectCard";
 import { cn } from "cn";
@@ -21,9 +21,9 @@ export function Projects() {
             Projetos
           </span>
 
-          <ButtonLink href="/#projetos" variant="outline" showArrow>
+          <Button href="/#projetos" variant="outline" showArrow>
             Ver todos os projetos
-          </ButtonLink>
+          </Button>
         </div>
 
         <section className="flex gap-12">
@@ -34,7 +34,7 @@ export function Projects() {
             Projetos selecionados
           </h2>
 
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-2">
             {PROJECTS.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}

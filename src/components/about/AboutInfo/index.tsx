@@ -22,7 +22,7 @@ export function AboutInfo({
   className?: string;
 }) {
   return (
-    <ul className={cn("flex flex-col gap-5", className)}>
+    <ul className={cn("flex flex-col gap-5 h-full justify-center", className)}>
       {items.map((item) => {
         const Icon = ICONS[item.id as keyof typeof ICONS] ?? HiSparkles;
 
