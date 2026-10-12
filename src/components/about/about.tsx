@@ -18,11 +18,12 @@ export function About() {
           alt="Retrato profissional de Nathálya Souza"
           width={550}
           height={550}
+          className="w-full h-full"
         />
 
         <div>
           <SectionLabel>Sobre mim</SectionLabel>
-          <Title id="sobre-heading">
+          <Title id="sobre-heading" className="mt-4">
             Transformo ideias em experiências digitais.
           </Title>
           

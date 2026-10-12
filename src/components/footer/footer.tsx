@@ -7,7 +7,7 @@ import { SocialLinks } from "./SocialLinks";
 export function Footer() {
   return (
     <footer className="bg-black py-8 sm:py-8">
-      <Container className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
+      <Container className="flex flex-col gap-8 items-center flex-wrap sm:flex-row sm:items-center sm:justify-between">
         <Link
           href="/"
           className="relative shrink-0 transition-opacity hover:opacity-80"
@@ -22,7 +22,7 @@ export function Footer() {
           />
         </Link>
 
-        <FooterNav className="justify-center" />
+        <FooterNav className="justify-center flex-nowrap" />
         <SocialLinks className="justify-start sm:justify-end" />
       </Container>
     </footer>

@@ -4,6 +4,7 @@ import { Button } from "@/components/layout/Button";
 import { Container } from "@/components/Container";
 import { Title } from "../layout/Title";
 import { SectionLabel } from "../layout/SectionLabel";
+import { cn } from "cn";
 
 export function Contact() {
   return (
@@ -12,10 +13,16 @@ export function Contact() {
       aria-labelledby="contato-heading"
       className="bg-cream py-16 sm:py-20 lg:py-0"
     >
-      <Container className="overflow-hidden rounded-3xl border border-beige lg:grid lg:max-w-7xl lg:grid-cols-2 lg:rounded-none lg:border-0 lg:px-0">
-        <div className="flex flex-col justify-center px-6 py-10 sm:px-10 lg:px-12 lg:py-24">
+      <Container className="overflow-hidden rounded-3xl flex flex-col gap-8 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:rounded-none">
+        <div
+          className={cn(
+            "flex-1 flex h-full flex-col justify-start",
+            "pr-4",
+            "border-b border-beige lg:border-b-0 lg:border-r",
+          )}
+        >
           <SectionLabel>Contato</SectionLabel>
-          
+
           <Title id="contato-heading">Vamos começar?</Title>
 
           <p className="mt-5 text-base leading-relaxed text-gray">
@@ -23,7 +30,11 @@ export function Contact() {
             experiência digital incrível.
           </p>
           <div className="mt-8">
-            <Button href="mailto:ns.contato21@gmail.com"variant="outline" showArrow>
+            <Button
+              href="mailto:ns.contato21@gmail.com"
+              variant="outline"
+              showArrow
+            >
               Solicitar orçamento
             </Button>
           </div>
@@ -34,7 +45,7 @@ export function Contact() {
           alt="Contact"
           width={550}
           height={550}
-          className="h-full"
+          className="h-full w-full"
         />
       </Container>
     </section>

@@ -34,6 +34,6 @@ export const PROJECTS: Project[] = [
     description:
       "Site institucional limpo e responsivo, com estrutura clara para gerar contato.",
     tags: ["React", "Next.js", "TypeScript"],
-    image: "/images/projects/institucional.svg",
+    image: "/images/projects/no-project.svg",
   },
 ];

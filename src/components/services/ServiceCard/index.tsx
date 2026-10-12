@@ -12,8 +12,9 @@ export function ServiceCard({
   return (
     <article
       className={cn(
-        "group flex h-full flex-col border-r border-beige py-6 last:border-b-0 sm:border-beige sm:bg-cream sm:p-6 sm:first:border-l sm:last:border-r-0",
-        "gap-3",
+        "group flex h-full flex-col",
+        "gap-3 py-6",
+        "sm:bg-cream sm:p-6",
         className,
       )}
     >

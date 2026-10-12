@@ -2,6 +2,7 @@ import { Container } from "@/components/Container";
 import { SERVICES } from "@/data/services";
 import { ServiceCard } from "./ServiceCard";
 import { cn } from "cn";
+import { Title } from "../layout/Title";
 
 export function Services() {
   return (
@@ -17,13 +18,13 @@ export function Services() {
           </span>
         </div>
 
-        <section className="flex gap-12">
-          <h2
+        <section className="flex gap-12 flex-col sm:flex-row">
+          <Title
             id="servicos-heading"
-            className="w-full flex-1 whitespace-nowrap font-dm-serif-display font-medium text-3xl leading-tight text-black sm:text-4xl lg:text-[2.75rem]"
+            className={cn("w-full flex-1 whitespace-nowrap")}
           >
             O que eu faço
-          </h2>
+          </Title>
           <div className="grid gap-0 sm:grid-cols-2 sm:gap-2 lg:grid-cols-4">
             {SERVICES.map((service) => (
               <ServiceCard key={service.id} service={service} />

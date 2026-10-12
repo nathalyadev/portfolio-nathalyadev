@@ -49,7 +49,7 @@ export function ProjectCard({
     </>
   );
 
-  const cardClassName = cn("group flex h-full flex-col first:border-l border-beige pl-4", className);
+  const cardClassName = cn("group flex h-full flex-col", className);
 
   if (project.href) {
     return (

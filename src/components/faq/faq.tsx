@@ -9,20 +9,24 @@ export function Faq() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="bg-cream py-16 sm:py-18 lg:py-16"
+      className="bg-cream py-16 sm:py-20 lg:py-24"
     >
-      <Container>
+      <Container className="overflow-hidden rounded-3xl flex flex-col gap-4 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:rounded-none">
         <div
           className={cn(
-            "flex justify-between items-center gap-3 items-left mb-4",
+            "flex-1 flex h-full flex-col justify-start",
+            "border-b border-beige lg:border-b-0 lg:border-r",
           )}
         >
-          <span className="text-xs font-semibold tracking-[0.18em] text-petrol-blue uppercase">
-            FAQ
-          </span>
-        </div>
-
-        <section className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start lg:gap-16">
+          <div
+            className={cn(
+              "flex justify-between items-center gap-3 items-left mb-4",
+            )}
+          >
+            <span className="text-xs font-semibold tracking-[0.18em] text-petrol-blue uppercase">
+              FAQ
+            </span>
+          </div>
           <div className="flex flex-col">
             <h2
               id="servicos-heading"
@@ -35,9 +39,9 @@ export function Faq() {
               esperar da parceria.
             </p>
           </div>
+        </div>
 
-          <FaqList items={FAQ_ITEMS} />
-        </section>
+        <FaqList items={FAQ_ITEMS} />
       </Container>
 
       <Container className="mt-14 flex flex-col items-center gap-4 text-center">
@@ -45,7 +49,9 @@ export function Faq() {
           <p className="max-w-md text-sm text-petrol-blue font-semibold sm:text-lg">
             Ainda tem alguma dúvida?
           </p>
-          <span className="text-base leading-relaxed text-gray">Conte-me sobre seu projeto.</span>
+          <span className="text-base leading-relaxed text-gray">
+            Conte-me sobre seu projeto.
+          </span>
         </div>
 
         <Button href="/#contato" variant="outline" showArrow>

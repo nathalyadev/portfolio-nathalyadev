@@ -9,7 +9,7 @@ export function FaqList({ items }: { items: FaqItemType[] }) {
   const [openId, setOpenId] = useState<string | null>(items[0]?.id ?? null);
 
   return (
-    <ul className="flex flex-col">
+    <ul className="flex flex-col w-full">
       {items.map((item) => {
         const isOpen = openId === item.id;
 
