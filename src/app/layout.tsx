@@ -7,14 +7,16 @@ import "@/global/styles/globals.css";
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: "variable",
+  display: "swap",
 });
 
 const dmSerifDisplay = DM_Serif_Display({
   variable: "--font-dm-serif-display",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: "400",
   style: ["normal", "italic"],
+  display: "swap",
 });
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
