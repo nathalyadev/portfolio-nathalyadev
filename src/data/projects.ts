@@ -16,7 +16,7 @@ export const PROJECTS: Project[] = [
     description:
       "Landing page para marca de cuidados naturais, com foco em conversão e experiência visual.",
     tags: ["React", "Next.js", "Tailwind"],
-    image: "/images/projects/nfb.svg",
+    image: "/images/projects/nfb.webp",
   },
   {
     id: "mypizza",
@@ -25,7 +25,7 @@ export const PROJECTS: Project[] = [
     description:
       "Landing page para pizzaria artesanal, com cardápio visual e chamada para pedido.",
     tags: ["React", "Next.js", "Tailwind"],
-    image: "/images/projects/mypizza.svg",
+    image: "/images/projects/mypizza.webp",
   },
   {
     id: "institucional",

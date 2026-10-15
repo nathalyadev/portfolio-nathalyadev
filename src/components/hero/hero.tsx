@@ -53,7 +53,7 @@ export function Hero() {
         )}
       >
         <Image
-          src="/images/hero/hero-visual.svg"
+          src="/images/hero/hero-visual.webp"
           alt="Mockup de notebook e tablet com interface de projeto digital"
           fill
           priority

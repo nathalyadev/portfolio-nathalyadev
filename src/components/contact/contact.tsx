@@ -41,11 +41,12 @@ export function Contact() {
         </div>
 
         <NextImage
-          src="/images/contact/contact.png"
+          src="/images/contact/contact.webp"
           alt="Contact"
-          width={550}
-          height={550}
+          width={880}
+          height={481}
           className="h-full w-full"
+          sizes="(max-width: 1024px) 100vw, 50vw"
         />
       </Container>
     </section>

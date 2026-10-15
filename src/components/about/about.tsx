@@ -14,11 +14,12 @@ export function About() {
     >
       <Container className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-12">
         <Image
-          src="/images/about/portrait.png"
+          src="/images/about/portrait.webp"
           alt="Retrato profissional de Nathálya Souza"
-          width={550}
-          height={550}
-          className="w-full h-full"
+          width={880}
+          height={854}
+          className="h-full w-full"
+          sizes="(max-width: 1024px) 100vw, 33vw"
         />
 
         <div>
