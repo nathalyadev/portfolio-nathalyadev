@@ -2,8 +2,6 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
   --cream: #f7f3ed;
   --black: #181818;
@@ -99,36 +97,6 @@
 
 body {
   font-family: var(--font-manrope);
-}
-
-.dark {
-  --background: var(--black);
-  --foreground: var(--cream);
-  --light-gray: #eeeeee;
-  --card: var(--black);
-  --card-foreground: var(--cream);
-  --popover: #1f1f1f;
-  --popover-foreground: var(--cream);
-  --primary: var(--petrol-blue);
-  --primary-foreground: var(--cream);
-  --secondary: #2a2a2a;
-  --secondary-foreground: var(--cream);
-  --muted: #2a2a2a;
-  --muted-foreground: #b0b0b0;
-  --accent: #2a2a2a;
-  --accent-foreground: var(--cream);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: var(--petrol-blue);
-  --sidebar: #1f1f1f;
-  --sidebar-foreground: var(--cream);
-  --sidebar-primary: var(--petrol-blue);
-  --sidebar-primary-foreground: var(--cream);
-  --sidebar-accent: #2a2a2a;
-  --sidebar-accent-foreground: var(--cream);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: var(--petrol-blue);
 }
 
 @layer base {

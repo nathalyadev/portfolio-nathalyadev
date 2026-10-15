@@ -17,6 +17,7 @@ const dmSerifDisplay = DM_Serif_Display({
   weight: "400",
   style: ["normal", "italic"],
   display: "swap",
+  preload: false,
 });
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
