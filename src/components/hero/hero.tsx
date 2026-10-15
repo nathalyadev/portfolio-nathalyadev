@@ -57,6 +57,7 @@ export function Hero() {
           alt="Mockup de notebook e tablet com interface de projeto digital"
           fill
           priority
+          fetchPriority="high"
           className="object-fill object-right"
           sizes="(max-width: 1024px) 90vw, 58vw"
         />

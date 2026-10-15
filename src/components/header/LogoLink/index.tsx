@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { navigateInPage } from "@/utils/smoothScroll";
 
 export function LogoLink({
   className,
@@ -11,6 +13,8 @@ export function LogoLink({
   className?: string;
   onClick?: () => void;
 }) {
+  const pathname = usePathname();
+
   return (
     <Link
       href="/"
@@ -19,7 +23,14 @@ export function LogoLink({
         className,
       )}
       aria-label="Nathálya Souza — página inicial"
-      onClick={onClick}
+      onClick={(event) => {
+        onClick?.();
+
+        if (pathname === "/") {
+          event.preventDefault();
+          window.setTimeout(() => navigateInPage("/"), 0);
+        }
+      }}
     >
       <Image
         src="/logo.svg"

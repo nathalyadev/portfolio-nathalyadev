@@ -27,10 +27,20 @@ export const NAV_ITEMS = [
 
 export function Header() {
   const pathname = usePathname();
+  const [hash, setHash] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCompact, setIsCompact] = useState(true);
   const barRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const syncHash = () => setHash(window.location.hash);
+
+    syncHash();
+    window.addEventListener("hashchange", syncHash);
+
+    return () => window.removeEventListener("hashchange", syncHash);
+  }, []);
 
   useEffect(() => {
     const evaluate = () => {
@@ -101,16 +111,18 @@ export function Header() {
           </span>
         </div>
 
-        <LogoLink />
+        <LogoLink onClick={() => setHash("")} />
 
         {!isCompact && (
           <>
             <NavLinks
               pathname={pathname}
+              hash={hash}
+              onHashChange={setHash}
               className="absolute left-1/2 flex -translate-x-1/2 items-center gap-8 xl:gap-10"
               linkClassName="pb-1"
             />
-            <CtaLink />
+            <CtaLink onClick={() => setHash("#contato")} />
           </>
         )}
 
@@ -135,7 +147,12 @@ export function Header() {
         >
           <DialogHeader className="flex flex-row items-center justify-between px-5 py-4 sm:px-8">
             <DialogTitle className="sr-only">Menu de navegação</DialogTitle>
-            <LogoLink onClick={() => setIsMenuOpen(false)} />
+            <LogoLink
+              onClick={() => {
+                setHash("");
+                setIsMenuOpen(false);
+              }}
+            />
             <DialogClose
               className="-mr-1 flex size-10 items-center justify-center cursor-pointer text-black transition-opacity hover:opacity-70"
               aria-label="Fechar menu"
@@ -147,6 +164,8 @@ export function Header() {
           <div className="flex flex-1 flex-col px-5 pb-10 sm:px-8">
             <NavLinks
               pathname={pathname}
+              hash={hash}
+              onHashChange={setHash}
               className="flex flex-col gap-1"
               linkClassName="py-3 text-base"
               underline="text"
@@ -155,7 +174,10 @@ export function Header() {
 
             <CtaLink
               className="mt-8 w-fit"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                setHash("#contato");
+                setIsMenuOpen(false);
+              }}
             />
           </div>
         </DialogContent>

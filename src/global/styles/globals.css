@@ -132,6 +132,18 @@ body {
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Compensa o header sticky (h-16 / sm:h-18) ao ancorar seções */
+    scroll-padding-top: 5.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
