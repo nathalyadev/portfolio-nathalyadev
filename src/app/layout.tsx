@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer/footer";
 import { Header } from "@/components/header/header";
 import "@/global/styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { Metadata } from "next";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -20,6 +21,12 @@ const dmSerifDisplay = DM_Serif_Display({
   display: "swap",
   preload: false,
 });
+
+export const metadata: Metadata = {
+  verification: {
+    google: "google5a6ff824e5a93770.html",
+  },
+};
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
