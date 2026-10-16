@@ -3,6 +3,7 @@ import { DM_Serif_Display, Manrope } from "next/font/google";
 import { Footer } from "@/components/footer/footer";
 import { Header } from "@/components/header/header";
 import "@/global/styles/globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -30,6 +31,8 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+
+        <Analytics />
       </body>
     </html>
   );
