@@ -24,7 +24,7 @@ const dmSerifDisplay = DM_Serif_Display({
 
 export const metadata: Metadata = {
   verification: {
-    google: "google5a6ff824e5a93770.html",
+    google: "cmC1_uaDeVyjCjMT9kjhQHdUra1bsV6BtZ0r4m5IumA",
   },
 };
 
