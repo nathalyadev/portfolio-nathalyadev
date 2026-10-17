@@ -1,36 +1,55 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 import { HomePage } from "@/template/pages/home";
 
+const siteUrl = process.env.SITE_URL
+
 export const metadata: Metadata = {
-  title: "Nathálya | Front-end & UI Designer",
+  metadataBase: new URL(siteUrl),
+
+  title: "Nathálya Souza | Desenvolvedora Front-end e UI Designer",
+
   description:
-    "Desenvolvedora Front-end & UI Designer, com quase 4 anos de experiência em design e desenvolvimento de interfaces web.",
-  keywords: [
-    "Nathálya",
-    "Front-end",
-    "UI Designer",
-    "Desenvolvedora",
-    "Developer",
-    "Designer",
-  ],
+    "Desenvolvedora Front-end com experiência em React, Next.js, TypeScript e UI Design. Explore projetos de interfaces web, e-commerce e performance.",
+
   authors: [
     {
       name: "Nathálya Souza",
-      url: "https://nathalyadev.com.br",
+      url: siteUrl,
     },
   ],
+
+  alternates: {
+    canonical: "/",
+  },
+
   openGraph: {
-    title: "Nathálya | Front-end & UI Designer",
+    type: "website",
+    locale: "pt_BR",
+    url: "/",
+    siteName: "Nathálya Souza",
+    title: "Nathálya Souza | Desenvolvedora Front-end e UI Designer",
     description:
-      "Desenvolvedora Front-end & UI Designer, com quase 4 anos de experiência em design e desenvolvimento de interfaces web.",
-    url: "https://nathalyadev.com.br",
-    siteName: "Nathálya",
+      "Projetos de desenvolvimento front-end, interfaces web, e-commerce e performance com React, Next.js e TypeScript.",
+    images: [
+      {
+        url: "/images/og/portfolio.png",
+        width: 1200,
+        height: 630,
+        alt: "Portfólio de Nathálya Souza — Front-end e UI Design",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Nathálya Souza | Desenvolvedora Front-end e UI Designer",
+    description:
+      "Projetos de desenvolvimento front-end, interfaces web, e-commerce e performance.",
+    images: ["/images/og/portfolio.png"],
   },
 };
 
 export default function Home() {
-  return (
-    <HomePage />
-  );
+  return <HomePage />;
 }
