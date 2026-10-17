@@ -29,7 +29,7 @@ export function Contact() {
             Conte-me sobre seu projeto e vamos transformar sua ideia em uma
             experiência digital incrível.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 mb-4">
             <Button
               href="mailto:ns.contato21@gmail.com"
               variant="outline"
