@@ -1,17 +1,10 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { HiArrowLongRight, HiBars3, HiXMark } from "react-icons/hi2";
 import { CtaLink } from "./CtaLink";
 
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import { LogoLink } from "./LogoLink";
 import { NavLinks } from "./NavLinks";
 
@@ -27,11 +20,13 @@ export const NAV_ITEMS = [
 
 export function Header() {
   const pathname = usePathname();
+  const menuTitleId = useId();
   const [hash, setHash] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCompact, setIsCompact] = useState(true);
   const barRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const syncHash = () => setHash(window.location.hash);
@@ -83,6 +78,27 @@ export function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isMenuOpen]);
+
   return (
     <header className="sticky top-0 z-50 w-full bg-cream">
       <div
@@ -131,8 +147,8 @@ export function Header() {
             type="button"
             className="-mr-1 flex size-10 items-center justify-center cursor-pointer text-black transition-opacity hover:opacity-70"
             aria-label="Abrir menu"
-            aria-haspopup="dialog"
             aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav"
             onClick={() => setIsMenuOpen(true)}
           >
             <HiBars3 className="size-6" aria-hidden />
@@ -140,26 +156,34 @@ export function Header() {
         )}
       </div>
 
-      <Dialog open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-        <DialogContent
-          showCloseButton={false}
-          className="inset-0 top-0 left-0 flex h-dvh w-full max-w-none translate-x-0 translate-y-0 flex-col gap-0 rounded-none border-0 bg-cream p-0 ring-0 data-open:zoom-in-100 data-closed:zoom-out-100 sm:max-w-none"
+      {isMenuOpen && (
+        <div
+          id="mobile-nav"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={menuTitleId}
+          className="fixed inset-0 z-50 flex h-dvh w-full flex-col bg-cream"
         >
-          <DialogHeader className="flex flex-row items-center justify-between px-5 py-4 sm:px-8">
-            <DialogTitle className="sr-only">Menu de navegação</DialogTitle>
+          <div className="flex flex-row items-center justify-between px-5 py-4 sm:px-8">
+            <h2 id={menuTitleId} className="sr-only">
+              Menu de navegação
+            </h2>
             <LogoLink
               onClick={() => {
                 setHash("");
                 setIsMenuOpen(false);
               }}
             />
-            <DialogClose
+            <button
+              ref={closeButtonRef}
+              type="button"
               className="-mr-1 flex size-10 items-center justify-center cursor-pointer text-black transition-opacity hover:opacity-70"
               aria-label="Fechar menu"
+              onClick={() => setIsMenuOpen(false)}
             >
               <HiXMark className="size-6" aria-hidden />
-            </DialogClose>
-          </DialogHeader>
+            </button>
+          </div>
 
           <div className="flex flex-1 flex-col px-5 pb-10 sm:px-8">
             <NavLinks
@@ -180,8 +204,8 @@ export function Header() {
               }}
             />
           </div>
-        </DialogContent>
-      </Dialog>
+        </div>
+      )}
     </header>
   );
 }
