@@ -36,7 +36,7 @@ O objetivo é apresentar serviços, projetos e trajetória de forma clara e aces
 
 ## Preview
 
-Acesse a versão publicada: [portfolio-nathalyadev.vercel.app](https://portfolio-nathalyadev.vercel.app/)
+Acesse a versão publicada: [nathalyadev.vercel.app](https://nathalyadev.vercel.app/)
 
 <!-- Adicione um print ou GIF em ./docs/preview.png quando disponível.
 ![Preview do projeto](./docs/preview.png)
@@ -130,14 +130,14 @@ A aplicação estará disponível em `http://localhost:3000`.
 
 ## Demonstração
 
-- **Aplicação:** [portfolio-nathalyadev.vercel.app](https://portfolio-nathalyadev.vercel.app/)
+- **Aplicação:** [nathalyadev.vercel.app](https://nathalyadev.vercel.app/)
 - **Repositório:** [github.com/nathalyadev/portfolio-nathalyadev](https://github.com/nathalyadev/portfolio-nathalyadev)
 
 ## Autoria
 
 Desenvolvido por **Nathálya Souza** — Front-end Developer com foco em React, Next.js, TypeScript e UI Engineering.
 
-- **Portfólio:** [portfolio-nathalyadev.vercel.app](https://portfolio-nathalyadev.vercel.app/)
+- **Portfólio:** [nathalyadev.vercel.app](https://nathalyadev.vercel.app/)
 - **GitHub:** [@nathalyadev](https://github.com/nathalyadev)
 - **LinkedIn:** [nathalya-souza-dev](https://www.linkedin.com/in/nathalya-souza-dev/)
 
