@@ -3,7 +3,7 @@ import type { FaqItem as FaqItemType } from "@/data/faq";
 
 export function FaqList({ items }: { items: FaqItemType[] }) {
   return (
-    <ul className="flex w-full flex-col">
+    <ul className="flex w-full flex-col gap-4">
       {items.map((item, index) => (
         <li key={item.id}>
           <details
