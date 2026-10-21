@@ -29,11 +29,11 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "institucional",
-    category: "Landing Page",
-    title: "Institucional",
+    category: "Web App",
+    title: "Compresskly",
     description:
-      "Site institucional limpo e responsivo, com estrutura clara para gerar contato.",
-    tags: ["React", "Next.js", "TypeScript"],
-    image: "/images/projects/no-project.svg",
+      "Uma ferramenta web para comprimir imagens e vídeos de forma prática e eficiente, reduzindo o tamanho dos arquivos sem comprometer significativamente sua qualidade.",
+    tags: ["React", "Next.js", "TypeScript", "UI/UX", "C#"],
+    image: "/images/projects/compresskly.webp",
   },
 ];
