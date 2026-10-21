@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
   title: "Nathálya Souza | Desenvolvedora Front-end e UI Designer",
 
+  icons: {
+    icon: {
+      url: "/logotipo.svg",
+      type: "image/svg+xml",
+      sizes: "any",
+    },
+  },
+
   description:
     "Desenvolvedora Front-end com experiência em React, Next.js, TypeScript e UI Design. Explore projetos de interfaces web, e-commerce e performance.",
 
