@@ -40,11 +40,19 @@ export function ProjectsGrid({
     onProjectChange?.(null);
   };
 
+  if (projects.length === 0) {
+    return (
+      <p className="py-16 text-center text-base text-gray">
+        Nenhum projeto encontrado para este filtro.
+      </p>
+    );
+  }
+
   return (
     <>
       <div
         className={cn(
-          "grid gap-10 sm:grid-cols-2 lg:gap-x-8 lg:gap-y-14",
+          "grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-14",
           className,
         )}
       >

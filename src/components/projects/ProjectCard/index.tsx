@@ -13,7 +13,12 @@ export function ProjectCard({
   onOpenDetails?: (project: Project) => void;
 }) {
   return (
-    <article className={cn("group flex h-full flex-col", className)}>
+    <article
+      className={cn(
+        "bg-[#F5F4ED] border border-beige p-4 rounded-xl group flex h-full flex-col",
+        className,
+      )}
+    >
       <button
         type="button"
         onClick={() => onOpenDetails?.(project)}
@@ -42,18 +47,18 @@ export function ProjectCard({
           {project.description}
         </p>
 
-        <div className="mt-auto flex items-end justify-between gap-4 pt-4">
-          <ul className="flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-              <li
-                key={tag}
-                className="rounded-full border border-beige px-3 py-1 text-xs font-medium text-gray"
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
+        <ul className="mt-auto flex flex-wrap gap-2 pt-4">
+          {project.tags.map((tag) => (
+            <li
+              key={tag}
+              className="rounded-full border border-beige px-3 py-1 text-xs font-medium text-gray"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
 
+        <div className="mt-auto flex items-end justify-end gap-4 pt-8">
           <button
             type="button"
             onClick={() => onOpenDetails?.(project)}

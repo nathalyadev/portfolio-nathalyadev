@@ -11,9 +11,19 @@ export type DesignSystem = {
   typography: { role: string; font: string }[];
 };
 
+export const PROJECT_CATEGORIES = [
+  "E-commerce",
+  "Landing Page",
+  "Web App",
+  "Sistemas Administrativos",
+  "UI Design",
+] as const;
+
+export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number];
+
 export type Project = {
   id: string;
-  category: string;
+  category: ProjectCategory;
   disciplines: string;
   title: string;
   tagline: string;
@@ -23,6 +33,8 @@ export type Project = {
   image: string;
   gallery: string[];
   href?: string;
+  /** ISO date — usado para ordenar por mais recente */
+  date: string;
   meta: ProjectMeta;
   uxCases: string[];
   designSystem: DesignSystem;
@@ -33,7 +45,7 @@ export type Project = {
 export const PROJECTS: Project[] = [
   {
     id: "nfb",
-    category: "Landing Page",
+    category: "E-commerce",
     disciplines: "UX/UI • E-COMMERCE",
     title: "NFB — Natural Beauty",
     tagline: "Beleza, tecnologia e uma experiência incrível.",
@@ -50,6 +62,7 @@ export const PROJECTS: Project[] = [
       "/images/projects/nfb.webp",
       "/images/projects/nfb.webp",
     ],
+    date: "2025-09-15",
     meta: {
       client: "Natural Beauty (Fictício)",
       duration: "6 semanas",
@@ -106,6 +119,7 @@ export const PROJECTS: Project[] = [
       "/images/projects/mypizza.webp",
       "/images/projects/mypizza.webp",
     ],
+    date: "2025-06-20",
     meta: {
       client: "MyPizza",
       duration: "4 semanas",
@@ -162,6 +176,7 @@ export const PROJECTS: Project[] = [
       "/images/projects/compresskly.webp",
       "/images/projects/compresskly.webp",
     ],
+    date: "2025-11-01",
     meta: {
       client: "Compresskly",
       duration: "8 semanas",
@@ -203,4 +218,21 @@ export const PROJECTS: Project[] = [
 
 export function getProjectById(id: string) {
   return PROJECTS.find((project) => project.id === id);
+}
+
+export function filterProjects(
+  projects: Project[],
+  category: ProjectCategory | "Todos",
+  sortByRecent = false,
+) {
+  const filtered =
+    category === "Todos"
+      ? projects
+      : projects.filter((project) => project.category === category);
+
+  if (!sortByRecent) return filtered;
+
+  return [...filtered].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
 }
