@@ -5,6 +5,11 @@ export function isActivePath(pathname: string, href: string, hash = "") {
   const currentHash =
     !hash || hash.startsWith("#") ? hash : `#${hash}`;
 
+  // Rotas dedicadas (ex.: /projetos) — ativo pelo pathname, sem depender de hash
+  if (hrefPath !== "/" && !hrefHash) {
+    return pathname === hrefPath || pathname.startsWith(`${hrefPath}/`);
+  }
+
   if (pathname !== hrefPath) {
     return false;
   }

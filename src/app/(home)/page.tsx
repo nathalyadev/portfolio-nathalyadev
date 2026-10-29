@@ -7,7 +7,7 @@ const siteUrl = process.env.SITE_URL
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
-  title: "Nathálya Souza | Desenvolvedora Front-end e UI Designer",
+  title: "Nathálya Souza | Desenvolvedora Front-end e UI/UX Designer",
 
   icons: {
     icon: {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: "/",
     siteName: "Nathálya Souza",
-    title: "Nathálya Souza | Desenvolvedora Front-end e UI Designer",
+    title: "Nathálya Souza | Desenvolvedora Front-end e UI/UX Designer",
     description:
       "Projetos de desenvolvimento front-end, interfaces web, e-commerce e performance com React, Next.js e TypeScript.",
     images: [
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
         url: "/images/og/portfolio.png",
         width: 1200,
         height: 630,
-        alt: "Portfólio de Nathálya Souza — Front-end e UI Design",
+        alt: "Portfólio de Nathálya Souza — Front-end e UI/UX Design",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Nathálya Souza | Desenvolvedora Front-end e UI Designer",
+    title: "Nathálya Souza | Desenvolvedora Front-end e UI/UX Designer",
     description:
       "Projetos de desenvolvimento front-end, interfaces web, e-commerce e performance.",
     images: ["/images/og/portfolio.png"],

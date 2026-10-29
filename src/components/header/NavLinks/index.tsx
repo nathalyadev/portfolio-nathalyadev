@@ -51,8 +51,12 @@ export function NavLinks({
               onHashChange?.(nextHash);
               onNavigate?.();
 
-              // Mesma página: scroll suave em vez do salto padrão do Link
-              if (pathname === "/") {
+              // Home: scroll suave só para âncoras da própria página (não rotas como /projetos)
+              const isInPageNav =
+                pathname === "/" &&
+                (item.href === "/" || item.href.startsWith("/#"));
+
+              if (isInPageNav) {
                 event.preventDefault();
 
                 const run = () => navigateInPage(item.href);

@@ -1,27 +1,26 @@
 import { Button } from "@/components/layout/Button";
 import { Container } from "@/components/Container";
-import { PROJECTS } from "@/data/projects";
-import { ProjectCard } from "./ProjectCard";
 import { cn } from "cn";
-import { SectionLabel } from "../layout/SectionLabel";
+import { SectionLabel } from "@/components/layout/SectionLabel";
+import { ProjectCard } from "./ProjectCard";
+import { PROJECTS } from "@/data/projects";
 
-export function Projects() {
+export function ProjectsComponent() {
   return (
     <section
       id="projetos"
       aria-labelledby="projetos-heading"
       className="bg-cream py-16 sm:py-20 lg:py-24"
     >
-      <Container className="flex flex-col items-start gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-0">
+      <Container className="flex flex-col items-start gap-10">
         <div
           className={cn(
-            "w-full flex justify-between items-center gap-3",
-            "flex-wrap",
+            "flex w-full flex-wrap items-center justify-between gap-3",
           )}
         >
           <SectionLabel>Projetos</SectionLabel>
 
-          <Button href="/#projetos" variant="outline" showArrow>
+          <Button href="/projetos" variant="outline" showArrow>
             Ver todos os projetos
           </Button>
         </div>

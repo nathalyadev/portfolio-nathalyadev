@@ -2,7 +2,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 export const FOOTER_LINKS = [
-  { label: "Projetos", href: "/#projetos" },
+  { label: "Projetos", href: "/projetos" },
   { label: "Sobre", href: "/#sobre" },
   { label: "Serviços", href: "/#servicos" },
   { label: "Contato", href: "/#contato" },
