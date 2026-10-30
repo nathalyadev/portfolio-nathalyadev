@@ -5,7 +5,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
   filterProjects,
   PROJECT_CATEGORIES,
-  PROJECTS,
+  type Project,
   type ProjectCategory,
 } from "@/data/projects";
 import {
@@ -21,7 +21,7 @@ function parseCategory(value: string | null): CategoryFilter {
     : "Todos";
 }
 
-export function ProjectsPageClient() {
+export function ProjectsPageClient({ projects }: { projects: Project[] }) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -39,8 +39,8 @@ export function ProjectsPageClient() {
   }
 
   const filteredProjects = useMemo(
-    () => filterProjects(PROJECTS, category, sortByRecent),
-    [category, sortByRecent],
+    () => filterProjects(projects, category, sortByRecent),
+    [projects, category, sortByRecent],
   );
 
   const updateParams = useCallback(

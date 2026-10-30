@@ -3,6 +3,7 @@ import { Container } from "@/components/Container";
 import { SectionLabel } from "@/components/layout/SectionLabel";
 import { ProjectsPageClient } from "@/components/projects/ProjectsPageClient";
 import { PROJECTS } from "@/data/projects";
+import { getAllProjects } from "@/lib/projects-local-store";
 import { ProjectsJsonLd } from "@/components/JsonLd/Projects";
 import Image from "next/image";
 
@@ -28,13 +29,15 @@ function ProjectsGridFallback() {
   );
 }
 
-export function ProjectsPage() {
+export async function ProjectsPage() {
+  const projects = await getAllProjects();
+
   return (
     <section
       aria-labelledby="projetos-page-heading"
       className="bg-cream py-16 sm:py-20 lg:py-24"
     >
-      <ProjectsJsonLd projects={PROJECTS} />
+      <ProjectsJsonLd projects={projects} />
 
       <Container>
         <header className="flex justify-between">
@@ -67,7 +70,7 @@ export function ProjectsPage() {
 
         <div className="mt-12 lg:mt-16">
           <Suspense fallback={<ProjectsGridFallback />}>
-            <ProjectsPageClient />
+            <ProjectsPageClient projects={projects} />
           </Suspense>
         </div>
       </Container>

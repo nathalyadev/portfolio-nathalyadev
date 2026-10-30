@@ -3,9 +3,11 @@ import { Container } from "@/components/Container";
 import { cn } from "cn";
 import { SectionLabel } from "@/components/layout/SectionLabel";
 import { ProjectCard } from "./ProjectCard";
-import { PROJECTS } from "@/data/projects";
+import { getAllProjects } from "@/lib/projects-local-store";
 
-export function ProjectsComponent() {
+export async function ProjectsComponent() {
+  const projects = await getAllProjects();
+
   return (
     <section
       id="projetos"
@@ -34,7 +36,7 @@ export function ProjectsComponent() {
           </h2>
 
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-2">
-            {PROJECTS.map((project) => (
+            {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
