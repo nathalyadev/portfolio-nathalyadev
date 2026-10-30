@@ -102,7 +102,7 @@ export function ProjectsLocalAdmin() {
   }, [form, editingBase]);
 
   const loadCatalog = useCallback(async () => {
-    const response = await fetch("/api/local/projects");
+    const response = await fetch("/api/local/projects/get");
     if (!response.ok) return;
     const data = (await response.json()) as { catalog: CatalogEntry[] };
     setCatalog(data.catalog);
@@ -162,7 +162,7 @@ export function ProjectsLocalAdmin() {
     setLoading(true);
     setStatus(null);
 
-    const response = await fetch("/api/local/projects", {
+    const response = await fetch("/api/local/projects/post", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -193,7 +193,7 @@ export function ProjectsLocalAdmin() {
     if (!entry.inLocalFile) return;
     setLoading(true);
     await fetch(
-      `/api/local/projects?id=${encodeURIComponent(entry.project.id)}`,
+      `/api/local/projects/delete?id=${encodeURIComponent(entry.project.id)}`,
       { method: "DELETE" },
     );
     setLoading(false);
