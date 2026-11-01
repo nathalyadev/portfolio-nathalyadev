@@ -56,6 +56,8 @@ export function ProjectDetailModal({
   const [copied, setCopied] = useState(false);
   const [cachedProject, setCachedProject] = useState<Project | null>(project);
 
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   if (project && project.id !== cachedProject?.id) {
     setCachedProject(project);
     setActiveSection("visao-geral");
@@ -176,8 +178,12 @@ export function ProjectDetailModal({
     },
   ];
 
+  const handleSelectImage = (src: string) => {
+    setSelectedImage(src);
+  };
+
   return createPortal(
-    <div className="fixed inset-0 z-100 flex items-start justify-center p-3 sm:items-center sm:p-6">
+    <div className="fixed inset-0 z-100 flex items-end justify-center sm:items-start sm:p-3 md:items-center md:p-6">
       <button
         type="button"
         className="absolute inset-0 bg-black/40 supports-backdrop-filter:backdrop-blur-xs"
@@ -189,13 +195,13 @@ export function ProjectDetailModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="relative z-10 flex h-[min(92dvh,900px)] w-full max-w-5xl flex-col overflow-hidden rounded-2xl bg-cream text-black shadow-2xl lg:max-w-7xl"
+        className="relative z-10 flex h-[92dvh] max-h-dvh w-full max-w-none flex-col overflow-hidden rounded-t-2xl bg-cream text-black shadow-2xl sm:max-h-[min(92dvh,900px)] sm:rounded-2xl md:max-w-5xl lg:max-w-7xl"
       >
-        <div className="flex min-h-0 flex-1 flex-col md:flex-row">
-          <aside className="pt-20 flex shrink-0 flex-col justify-between bg-[#0A2D37] text-cream md:w-56 lg:w-50">
+        <div className="flex min-h-0 flex-1 flex-col md:max-h-[min(92dvh,900px)] md:flex-row">
+          <aside className="flex shrink-0 flex-col justify-between border-b border-cream/15 bg-[#0A2D37] px-2 py-3 text-cream md:w-56 md:border-b-0 md:px-0 md:py-4 lg:w-50">
             <nav
               aria-label="Seções do projeto"
-              className="flex flex-row gap-2 overflow-x-auto md:flex-col md:gap-1 md:overflow-visible"
+              className="flex flex-row gap-1 overflow-x-auto overscroll-x-contain pb-0.5 scrollbar-none md:flex-col md:gap-1 md:overflow-visible md:pb-0"
             >
               {SECTIONS.map((section, index) => {
                 const isActive = activeSection === section.id;
@@ -279,37 +285,38 @@ export function ProjectDetailModal({
 
             <div
               ref={contentRef}
-              className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 py-6 sm:px-8 sm:py-8 lg:px-8"
+              className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-5 sm:px-8 sm:py-8 lg:px-8"
             >
               <section
                 id="modal-visao-geral"
                 aria-labelledby="modal-visao-geral-heading"
-                className="scroll-mt-6 grid grid-cols-1 gap-6 md:grid-cols-2"
+                className="scroll-mt-6 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-6"
               >
                 <div className="w-full overflow-hidden rounded-xl flex flex-col gap-8">
                   <div className="flex flex-col gap-2">
                     <div className="relative aspect-16/10 w-full">
                       <Image
-                        src={cachedProject.image}
+                        src={selectedImage || cachedProject.image}
                         alt={`Preview principal do projeto ${cachedProject.title}`}
                         fill
-                        className="object-cover"
+                        className="object-contain"
                         sizes="(max-width: 768px) 100vw, 720px"
                         priority
                       />
                     </div>
 
-                    <ul className="mt-3 grid grid-cols-3 gap-3">
+                    <ul className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
                       {cachedProject.gallery.map((src, index) => (
                         <li
                           key={`${cachedProject.id}-gallery-${index}`}
-                          className="relative aspect-square overflow-hidden rounded-lg bg-secondary"
+                          className="relative aspect-square overflow-hidden rounded-lg bg-cream cursor-pointer"
+                          onClick={() => handleSelectImage(src)}
                         >
                           <Image
                             src={src}
                             alt={`Detalhe ${index + 1} do projeto ${cachedProject.title}`}
                             fill
-                            className="object-cover"
+                            className="object-contain"
                             sizes="160px"
                           />
                         </li>
@@ -353,19 +360,19 @@ export function ProjectDetailModal({
                   </section>
                 </div>
 
-                <div className="flex flex-col gap-2">
-                  <p className="pr-10 text-xs font-semibold tracking-[0.16em] text-gray uppercase">
+                <div className="order-first flex min-w-0 flex-col gap-2 md:order-none">
+                  <p className="pr-12 text-xs font-semibold tracking-[0.16em] text-gray uppercase sm:pr-10">
                     {cachedProject.disciplines}
                   </p>
 
                   <h2
                     id={titleId}
-                    className="font-dm-serif-display text-1xl leading-tight text-black sm:text-2xl lg:text-3xl"
+                    className="font-dm-serif-display text-xl leading-tight text-black sm:text-2xl lg:text-3xl"
                   >
                     {cachedProject.title}
                   </h2>
 
-                  <p className="font-dm-serif-display italic max-w-2xl text-lg leading-relaxed text-gray">
+                  <p className="max-w-2xl font-dm-serif-display text-base italic leading-relaxed text-gray sm:text-lg">
                     {cachedProject.tagline}
                   </p>
 
@@ -384,7 +391,7 @@ export function ProjectDetailModal({
               >
                 <h3
                   id="modal-casos-ux-heading"
-                  className="font-dm-serif-display text-2xl text-black"
+                  className="font-dm-serif-display text-xl text-black sm:text-2xl"
                 >
                   Casos de UX
                 </h3>
@@ -412,7 +419,7 @@ export function ProjectDetailModal({
               >
                 <h3
                   id="modal-design-system-heading"
-                  className="font-dm-serif-display text-2xl text-black"
+                  className="font-dm-serif-display text-xl text-black sm:text-2xl"
                 >
                   Design System
                 </h3>
@@ -466,7 +473,7 @@ export function ProjectDetailModal({
               >
                 <h3
                   id="modal-desenvolvimento-heading"
-                  className="font-dm-serif-display text-2xl text-black"
+                  className="font-dm-serif-display text-xl text-black sm:text-2xl"
                 >
                   Desenvolvimento
                 </h3>
@@ -493,7 +500,7 @@ export function ProjectDetailModal({
               >
                 <h3
                   id="modal-resultados-heading"
-                  className="font-dm-serif-display text-2xl text-black"
+                  className="font-dm-serif-display text-xl text-black sm:text-2xl"
                 >
                   Resultados
                 </h3>
@@ -513,7 +520,7 @@ export function ProjectDetailModal({
                 </ul>
               </section>
 
-              <div className="mt-10 flex flex-col gap-3 border-t border-beige pt-8 sm:flex-row sm:flex-wrap">
+              <div className="mt-10 flex flex-col gap-3 border-t border-beige pt-8 sm:flex-row sm:flex-wrap [&_a]:w-full [&_button]:w-full sm:[&_a]:w-auto sm:[&_button]:w-auto">
                 {liveUrl ? (
                   <a
                     href={liveUrl}
@@ -521,18 +528,10 @@ export function ProjectDetailModal({
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-petrol-blue px-5 py-2.5 text-sm font-medium text-cream transition-colors hover:bg-[#1f4348]"
                   >
-                    Ver projeto ao vivo
+                    Ver projeto
                     <HiArrowUpRight className="size-4" aria-hidden />
                   </a>
                 ) : null}
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("casos-ux")}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-petrol-blue px-5 py-2.5 text-sm font-medium text-cream transition-colors hover:bg-[#1f4348]"
-                >
-                  Ver mais detalhes do projeto
-                  <HiArrowUpRight className="size-4" aria-hidden />
-                </button>
               </div>
             </div>
           </div>

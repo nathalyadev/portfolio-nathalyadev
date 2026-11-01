@@ -52,7 +52,7 @@ export function ProjectsGrid({
     <>
       <div
         className={cn(
-          "grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-14",
+          "grid grid-cols-1 gap-8 min-w-0 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-14",
           className,
         )}
       >

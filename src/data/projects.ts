@@ -56,16 +56,16 @@ export const PROJECTS: Project[] = [
       "A plataforma foi pensada para destacar produtos naturais, reforçar confiança da marca e conduzir o visitante até a conversão com fluidez.",
     ],
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-    image: "/images/projects/nfb.webp",
+    image: "/images/projects/nfb-beauty/screenshot-1.webp",
     gallery: [
-      "/images/projects/nfb.webp",
-      "/images/projects/nfb.webp",
-      "/images/projects/nfb.webp",
+      "/images/projects/nfb-beauty/screenshot-1.webp",
+      // "/images/projects/nfb-beauty/screenshot-2.webp",
+      // "/images/projects/nfb-beauty/screenshot-3.webp",
     ],
     date: "2025-09-15",
     meta: {
       client: "Natural Beauty (Fictício)",
-      duration: "6 semanas",
+      duration: "Em desenvolvimento",
       team: "1 desenvolvedora",
       platform: "Web",
       technologies: ["Next.js", "TypeScript", "React"],
@@ -100,68 +100,69 @@ export const PROJECTS: Project[] = [
       "Base reutilizável para evolução do e-commerce",
     ],
   },
-  {
-    id: "mypizza",
-    category: "Landing Page",
-    disciplines: "UX/UI • FOOD TECH",
-    title: "MyPizza",
-    tagline: "Apetite, contraste e pedido em poucos cliques.",
-    description:
-      "Landing page para pizzaria artesanal, com cardápio visual e chamada para pedido.",
-    about: [
-      "O objetivo era transmitir o sabor e a identidade da marca logo no primeiro scroll, com uma estética escura e imagens de alto impacto.",
-      "A interface organiza o cardápio, reforça a proposta artesanal e facilita o caminho até o pedido com CTAs bem posicionados.",
-    ],
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-    image: "/images/projects/mypizza.webp",
-    gallery: [
-      "/images/projects/mypizza.webp",
-      "/images/projects/mypizza.webp",
-      "/images/projects/mypizza.webp",
-    ],
-    date: "2025-06-20",
-    meta: {
-      client: "MyPizza",
-      duration: "4 semanas",
-      team: "1 desenvolvedora",
-      platform: "Web",
-      technologies: ["Next.js", "TypeScript", "React"],
-    },
-    uxCases: [
-      "Mapa da jornada de pedido",
-      "Hierarquia do cardápio",
-      "Protótipos de alta fidelidade",
-      "Microinterações de CTA",
-    ],
-    designSystem: {
-      colors: [
-        { name: "Cream", hex: "#F7F3ED" },
-        { name: "Charcoal", hex: "#1A1A1A" },
-        { name: "Accent", hex: "#C45C26" },
-        { name: "Muted", hex: "#8A8A8A" },
-      ],
-      typography: [
-        { role: "Títulos", font: "DM Serif Display" },
-        { role: "Texto", font: "Manrope" },
-      ],
-    },
-    development: [
-      "Landing page performática em Next.js",
-      "Seções modulares para cardápio e CTA",
-      "Tipografia e contraste otimizados para leitura",
-      "Responsividade mobile-first",
-    ],
-    results: [
-      "Narrativa visual forte da marca",
-      "Fluxo de pedido mais direto",
-      "Layout pronto para campanhas e variações sazonais",
-    ],
-  },
+  // {
+  //   id: "mypizza",
+  //   category: "Landing Page",
+  //   disciplines: "UX/UI • FOOD TECH",
+  //   title: "MyPizza",
+  //   tagline: "Apetite, contraste e pedido em poucos cliques.",
+  //   description:
+  //     "Landing page para pizzaria artesanal, com cardápio visual e chamada para pedido.",
+  //   about: [
+  //     "O objetivo era transmitir o sabor e a identidade da marca logo no primeiro scroll, com uma estética escura e imagens de alto impacto.",
+  //     "A interface organiza o cardápio, reforça a proposta artesanal e facilita o caminho até o pedido com CTAs bem posicionados.",
+  //   ],
+  //   tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+  //   image: "/images/projects/mypizza.webp",
+  //   gallery: [
+  //     "/images/projects/mypizza.webp",
+  //     "/images/projects/mypizza.webp",
+  //     "/images/projects/mypizza.webp",
+  //   ],
+  //   date: "2025-06-20",
+  //   meta: {
+  //     client: "MyPizza",
+  //     duration: "Em desenvolvimento",
+  //     team: "1 desenvolvedora",
+  //     platform: "Web",
+  //     technologies: ["Next.js", "TypeScript", "React"],
+  //   },
+  //   uxCases: [
+  //     "Mapa da jornada de pedido",
+  //     "Hierarquia do cardápio",
+  //     "Protótipos de alta fidelidade",
+  //     "Microinterações de CTA",
+  //   ],
+  //   designSystem: {
+  //     colors: [
+  //       { name: "Cream", hex: "#F7F3ED" },
+  //       { name: "Charcoal", hex: "#1A1A1A" },
+  //       { name: "Accent", hex: "#C45C26" },
+  //       { name: "Muted", hex: "#8A8A8A" },
+  //     ],
+  //     typography: [
+  //       { role: "Títulos", font: "DM Serif Display" },
+  //       { role: "Texto", font: "Manrope" },
+  //     ],
+  //   },
+  //   development: [
+  //     "Landing page performática em Next.js",
+  //     "Seções modulares para cardápio e CTA",
+  //     "Tipografia e contraste otimizados para leitura",
+  //     "Responsividade mobile-first",
+  //   ],
+  //   results: [
+  //     "Narrativa visual forte da marca",
+  //     "Fluxo de pedido mais direto",
+  //     "Layout pronto para campanhas e variações sazonais",
+  //   ],
+  // },
   {
     id: "institucional",
     category: "Web App",
     disciplines: "PRODUCT • SAAS",
     title: "Compresskly",
+    href: "https://github.com/nathalyadev/compresskly",
     tagline: "Comprimir arquivos sem perder qualidade nem tempo.",
     description:
       "Ferramenta web para comprimir imagens e vídeos de forma prática, reduzindo o tamanho dos arquivos sem comprometer a qualidade.",
@@ -170,16 +171,15 @@ export const PROJECTS: Project[] = [
       "A interface prioriza clareza, estados de progresso e uma área de upload intuitiva para uso frequente no dia a dia.",
     ],
     tags: ["React", "Next.js", "TypeScript", "UI/UX", "C#"],
-    image: "/images/projects/compresskly.webp",
+    image: "/images/projects/compresskly/screenshot-1.webp",
     gallery: [
-      "/images/projects/compresskly.webp",
-      "/images/projects/compresskly.webp",
-      "/images/projects/compresskly.webp",
+      "/images/projects/compresskly/screenshot-1.webp",
+      "/images/projects/compresskly/screenshot-2.png"
     ],
     date: "2025-11-01",
     meta: {
       client: "Compresskly",
-      duration: "8 semanas",
+      duration: "Em desenvolvimento",
       team: "1 desenvolvedora",
       platform: "Web",
       technologies: ["Next.js", "TypeScript", "C#"],
@@ -193,13 +193,15 @@ export const PROJECTS: Project[] = [
     designSystem: {
       colors: [
         { name: "Surface", hex: "#F7F3ED" },
+        { name: "Deep Petrol", hex: "#0B3B45" },
         { name: "Petrol", hex: "#28545A" },
         { name: "Ink", hex: "#181818" },
         { name: "Border", hex: "#DCD5CC" },
       ],
       typography: [
         { role: "Títulos", font: "DM Serif Display" },
-        { role: "Texto", font: "Manrope" },
+        { role: "Subtítulos", font: "Manrope" },
+        { role: "Texto", font: "Inter" },
       ],
     },
     development: [

@@ -15,7 +15,7 @@ export function ProjectCard({
   return (
     <article
       className={cn(
-        "bg-[#F5F4ED] border border-beige p-4 rounded-xl group flex h-full flex-col",
+        "group flex h-full flex-col rounded-xl border border-beige bg-[#F5F4ED] p-4 sm:p-5",
         className,
       )}
     >
@@ -39,7 +39,7 @@ export function ProjectCard({
           {project.category}
         </span>
 
-        <h3 className="mt-2 font-dm-serif-display text-2xl leading-tight text-black">
+        <h3 className="mt-2 font-dm-serif-display text-xl leading-tight text-black sm:text-2xl">
           {project.title}
         </h3>
 

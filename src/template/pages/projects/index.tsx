@@ -15,7 +15,7 @@ function ProjectsGridFallback() {
           <div key={index} className="h-10 w-24 rounded-full bg-secondary" />
         ))}
       </div>
-      <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-14">
+      <div className="grid grid-cols-1 gap-8 min-w-0 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-14">
         {PROJECTS.map((project) => (
           <div key={project.id} className="flex flex-col">
             <div className="aspect-16/11 w-full rounded-xl bg-secondary" />
@@ -40,16 +40,18 @@ export async function ProjectsPage() {
       <ProjectsJsonLd projects={projects} />
 
       <Container>
-        <header className="flex justify-between">
-          <div className="w-full flex flex-col">
+        <header className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12 xl:gap-16">
+          <div className="min-w-0 flex-1">
             <SectionLabel>Meus Projetos</SectionLabel>
             <h1
               id="projetos-page-heading"
-              className="mt-3 font-dm-serif-display text-3xl leading-tight text-black sm:text-4xl lg:text-5xl"
+              className="mt-3 font-dm-serif-display text-[clamp(1.75rem,5vw,3rem)] leading-tight text-black sm:text-4xl lg:text-5xl"
             >
-              Alguns dos projetos que <br />
-              já{" "}
-              <span className="text-petrol-blue">desenvolvi.</span>
+              Alguns dos projetos que{" "}
+              <span className="block sm:inline">
+                já{" "}
+                <span className="text-petrol-blue">desenvolvi.</span>
+              </span>
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-gray sm:text-lg">
               Aqui você encontra uma seleção de projetos que refletem minha
@@ -58,12 +60,14 @@ export async function ProjectsPage() {
             </p>
           </div>
 
-          <div className="w-full">
+          <div className="relative mx-auto aspect-3/2 w-full max-w-xs shrink-0 sm:max-w-sm lg:mx-0 lg:max-w-md xl:max-w-lg">
             <Image
               src="/images/projects/thumbnail.png"
               alt=""
-              width={600}
-              height={400}
+              fill
+              className="object-contain object-center"
+              sizes="(max-width: 1024px) min(100vw, 24rem), 28rem"
+              priority
             />
           </div>
         </header>
