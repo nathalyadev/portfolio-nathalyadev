@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = process.env.SITE_URL;
+import { getSiteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = siteUrl ?? "";
+  const base = getSiteUrl();
 
   return [
     {
@@ -15,8 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${base}/projetos`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
   ];
 }

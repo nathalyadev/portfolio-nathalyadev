@@ -101,7 +101,6 @@ body {
 
 @layer base {
   html {
-    scroll-behavior: smooth;
     /* Compensa o header sticky (h-16 / sm:h-18) ao ancorar seções */
     scroll-padding-top: 5.5rem;
   }

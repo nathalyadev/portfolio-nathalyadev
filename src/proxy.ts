@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 
 import { isLocalDevRouteAllowed } from "@/lib/local-dev";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   if (!isLocalDevRouteAllowed()) {
     return new NextResponse(null, { status: 404 });
   }
